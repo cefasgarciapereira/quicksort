@@ -19,7 +19,7 @@ parallel version of the code. So we can compare the time performance for each.
 
 ## Running
 
-If you are on unix like OS, you can simply run the script ```./script.h```. It
+If you are on unix like OS, you can simply run the script ```./script.sh```. It
 automatically compile all the source codes and run them with input from 10 to
 10.000.000 array's size.
 If you prefer run each code separadetly, the program expects you to inform the
