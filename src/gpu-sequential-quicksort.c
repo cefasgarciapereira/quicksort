@@ -1,5 +1,6 @@
 #include<stdio.h> 
 #include<time.h>
+#include<omp.h>
 #include "quicksort.h"  
 int prints = 0;
 
@@ -17,11 +18,14 @@ int main(int argc, char **argv)
     }
     //time count starts
     start = clock();
-    quickSort(arr, 0, size-1); 
+    #pragma omp target // move this region of the code to the GPU and implicity maps data
+    {
+        quickSort(arr, 0, size-1); 
+    }
     //calulate total time    
     end = clock();
     total_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("\nCPU Sequential %d Elements: %.2f miliseconds\n",size, total_time*1000);    
+    printf("\nGPU Sequential %d Elements: %.2f miliseconds\n",size, total_time*1000);    
     if(prints != 0){
         printf("Sorted array: "); 
         printArray(arr, size); 

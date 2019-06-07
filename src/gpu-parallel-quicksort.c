@@ -28,7 +28,7 @@ void populateR(int R[],int v[],int pivot, int n){
     }
 }
 
-int parallelQuicksort(int v[], int n){
+int parallelQuicksortGPU(int v[], int n){
     int pivot;
     int *L; //left size of the array
     int *R; //right size of the array
@@ -49,23 +49,22 @@ int parallelQuicksort(int v[], int n){
     populateR(R, v,pivot,n);
     //printArray(R,(n-pivot));
     //printf("\n");
-
-    omp_set_num_threads(2);
-
-
-    #pragma omp parallel
+    #pragma omp target // move this region of the code to the GPU and implicity maps data
     {
-        int id = omp_get_thread_num();
-        int nt = omp_get_num_threads();
+        omp_set_num_threads(2);
+        #pragma omp parallel
+        {
+            int id = omp_get_thread_num();
+            int nt = omp_get_num_threads();
 
-        if(id == 0){
-            quickSort(L,0,pivot-1);
+            if(id == 0){
+                quickSort(L,0,pivot-1);
+            }
+
+            if(id == 1){
+                quickSort(R,0,(n-pivot)-1);
+            }
         }
-
-        if(id == 1){
-            quickSort(R,0,(n-pivot)-1);
-        }
-
     }
     if(prints != 0){
         printf("Sorted array: "); 
@@ -77,8 +76,6 @@ int parallelQuicksort(int v[], int n){
             printArray(L, pivot); 
         }
     }
-
-
 }
 
 int main(int argc, char **argv){
@@ -96,10 +93,10 @@ int main(int argc, char **argv){
     }
     //time count starts
     start = clock();
-    parallelQuicksort(arr, size);
+    parallelQuicksortGPU(arr, size);
     //calulate total time    
     end = clock();
     total_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("\nCPU Prallel %d Elements: %.2f miliseconds\n",size, total_time*1000);
+    printf("\nGPU Prallel %d Elements: %.2f miliseconds\n",size, total_time*1000);
     return 0;
 }
