@@ -1,4 +1,4 @@
-##Quicksort
+## Quicksort
 
 Quicksort is very famous algorithm to sort arrays. In this project the algorithm
 is implemented in C language as a discipline project of Computer Sciende Master
