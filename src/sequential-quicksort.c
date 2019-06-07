@@ -15,10 +15,10 @@ int main(int argc, char **argv)
     for(i=0;i<size;i++){
         arr[i] = rand() % 9999;
     }
-    //time count sta
+    //time count starts
     start = clock();
     quickSort(arr, 0, size-1); 
-     //calulate total time    
+    //calulate total time    
     end = clock();
     total_time = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("\nTime taken to solve it in sequential and an array size of %d: %.2f miliseconds\n",size, total_time*1000);
