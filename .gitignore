@@ -1,1 +1,5 @@
 .vscode
+sequential-quicksort
+parallel-quicksort
+gpu-parallel-quicksort
+gpu-sequential-quicksort

@@ -1,6 +1,6 @@
 #include<stdio.h> 
 #include<time.h>
-#include "quicksort.h"  
+#include "../lib/quicksort.h"  
 int prints = 0;
 
 int main(int argc, char **argv) 

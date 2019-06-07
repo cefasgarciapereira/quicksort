@@ -2,7 +2,7 @@
 #include<time.h>
 #include <stdlib.h>
 #include<omp.h>
-#include "quicksort.h"
+#include "../lib/quicksort.h"
 int prints = 0;
 
 int getPivot(int n){
@@ -36,7 +36,7 @@ int parallelQuicksort(int v[], int n){
 
     if(n<=1)
         return v;
-    
+
     pivot = getPivot(n); //any value from array (random)
     L = (int*)malloc(pivot * sizeof(int));//L gets the value of the array from the begining until the pivot
     R = (int*)malloc((n-pivot) * sizeof(int));//R gets the value of the array from the pivot to the end
@@ -68,13 +68,13 @@ int parallelQuicksort(int v[], int n){
 
     }
     if(prints != 0){
-        printf("Sorted array: "); 
+        printf("Sorted array: ");
         if(L[0] < R[0]){
-            printArray(L, pivot); 
-            printArray(R, (n-pivot)); 
+            printArray(L, pivot);
+            printArray(R, (n-pivot));
         }else{
             printArray(R, (n-pivot));
-            printArray(L, pivot); 
+            printArray(L, pivot);
         }
     }
 
@@ -82,7 +82,7 @@ int parallelQuicksort(int v[], int n){
 }
 
 int main(int argc, char **argv){
-    int *arr,n,i,size;    
+    int *arr,n,i,size;
     time_t t;
     double total_time;
     clock_t start, end;
@@ -97,7 +97,7 @@ int main(int argc, char **argv){
     //time count starts
     start = clock();
     parallelQuicksort(arr, size);
-    //calulate total time    
+    //calulate total time
     end = clock();
     total_time = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("\nCPU Prallel %d Elements: %.2f miliseconds\n",size, total_time*1000);

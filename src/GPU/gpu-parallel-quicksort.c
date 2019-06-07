@@ -2,7 +2,7 @@
 #include<time.h>
 #include <stdlib.h>
 #include<omp.h>
-#include "quicksort.h"
+#include "../lib/quicksort.h"
 int prints = 0;
 
 int getPivot(int n){
