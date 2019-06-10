@@ -1,6 +1,6 @@
 # Quicksort
 
-Quicksort is very famous algorithm to sort arrays. In this project the algorithm
+Quicksort is a very famous algorithm to sort arrays. In this project the algorithm
 is implemented in C language as a discipline project of Computer Sciende Master
 degree. The objective is to compare the performance of sequential and parallel
 methods of execution. For that I used the OpenMP library.
