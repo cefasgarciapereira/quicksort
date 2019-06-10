@@ -25,21 +25,6 @@ void populateVectors(int L[], int R[],int v[],int vsize, int pivot){
   }
 }
 
-int setSizeVectors(int L[], int R[], int v[], int vsize, int pivot){
-  int i;
-  int lsize = 0, rsize = 0;
-  int vsizes[2];
-
-  for(i=0;i<vsize;i++){
-    if(v[i] < pivot){
-      lsize++;
-    }else{
-      rsize++;
-    }
-  }
-  return vsizes;
-}
-
 int parallelQuicksort(int v[], int n){
     int pivot;
     int *L; //left size of the array
@@ -69,15 +54,12 @@ int parallelQuicksort(int v[], int n){
     {
         int id = omp_get_thread_num();
         int nt = omp_get_num_threads();
-
         if(id == 0){
             quickSort(L,0,lsize-1);
         }
-
         if(id == 1){
             quickSort(R,0,rsize-1);
         }
-
     }
     if(prints != 0){
       printArray(L,lsize);
