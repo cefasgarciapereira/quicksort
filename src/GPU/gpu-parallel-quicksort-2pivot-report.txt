@@ -1,0 +1,121 @@
+
+
+---------- 1000 ----------
+[1] CPU Sequential 1000 Elements: 33.11 miliseconds
+[2] CPU Sequential 1000 Elements: 21.59 miliseconds
+[3] CPU Sequential 1000 Elements: 35.71 miliseconds
+[4] CPU Sequential 1000 Elements: 33.93 miliseconds
+[5] CPU Sequential 1000 Elements: 20.11 miliseconds
+[6] CPU Sequential 1000 Elements: 20.24 miliseconds
+[7] CPU Sequential 1000 Elements: 20.44 miliseconds
+[8] CPU Sequential 1000 Elements: 20.10 miliseconds
+[9] CPU Sequential 1000 Elements: 19.89 miliseconds
+[10] CPU Sequential 1000 Elements: 47.69 miliseconds
+
+ Average: 27.28 miliseconds
+----------------------
+
+---------- 2000 ----------
+[1] CPU Sequential 2000 Elements: 55.40 miliseconds
+[2] CPU Sequential 2000 Elements: 59.43 miliseconds
+[3] CPU Sequential 2000 Elements: 46.24 miliseconds
+[4] CPU Sequential 2000 Elements: 42.06 miliseconds
+[5] CPU Sequential 2000 Elements: 32.27 miliseconds
+[6] CPU Sequential 2000 Elements: 32.40 miliseconds
+[7] CPU Sequential 2000 Elements: 45.09 miliseconds
+[8] CPU Sequential 2000 Elements: 31.90 miliseconds
+[9] CPU Sequential 2000 Elements: 31.91 miliseconds
+[10] CPU Sequential 2000 Elements: 33.20 miliseconds
+
+ Average: 40.99 miliseconds
+----------------------
+
+---------- 4000 ----------
+[1] CPU Sequential 4000 Elements: 98.89 miliseconds
+[2] CPU Sequential 4000 Elements: 94.23 miliseconds
+[3] CPU Sequential 4000 Elements: 90.69 miliseconds
+[4] CPU Sequential 4000 Elements: 96.88 miliseconds
+[5] CPU Sequential 4000 Elements: 92.87 miliseconds
+[6] CPU Sequential 4000 Elements: 83.30 miliseconds
+[7] CPU Sequential 4000 Elements: 105.20 miliseconds
+[8] CPU Sequential 4000 Elements: 98.07 miliseconds
+[9] CPU Sequential 4000 Elements: 115.87 miliseconds
+[10] CPU Sequential 4000 Elements: 93.65 miliseconds
+
+ Average: 96.96 miliseconds
+----------------------
+
+---------- 8000 ----------
+[1] CPU Sequential 8000 Elements: 308.58 miliseconds
+[2] CPU Sequential 8000 Elements: 296.15 miliseconds
+[3] CPU Sequential 8000 Elements: 293.22 miliseconds
+[4] CPU Sequential 8000 Elements: 296.92 miliseconds
+[5] CPU Sequential 8000 Elements: 296.13 miliseconds
+[6] CPU Sequential 8000 Elements: 294.31 miliseconds
+[7] CPU Sequential 8000 Elements: 289.51 miliseconds
+[8] CPU Sequential 8000 Elements: 303.03 miliseconds
+[9] CPU Sequential 8000 Elements: 300.90 miliseconds
+[10] CPU Sequential 8000 Elements: 284.66 miliseconds
+
+ Average: 296.34 miliseconds
+----------------------
+
+---------- 16000 ----------
+[1] CPU Sequential 16000 Elements: 1095.02 miliseconds
+[2] CPU Sequential 16000 Elements: 1094.34 miliseconds
+[3] CPU Sequential 16000 Elements: 1095.92 miliseconds
+[4] CPU Sequential 16000 Elements: 1159.30 miliseconds
+[5] CPU Sequential 16000 Elements: 1128.27 miliseconds
+[6] CPU Sequential 16000 Elements: 1087.22 miliseconds
+[7] CPU Sequential 16000 Elements: 1097.47 miliseconds
+[8] CPU Sequential 16000 Elements: 1107.76 miliseconds
+[9] CPU Sequential 16000 Elements: 1110.19 miliseconds
+[10] CPU Sequential 16000 Elements: 1082.47 miliseconds
+
+ Average: 1105.80 miliseconds
+----------------------
+
+---------- 32000 ----------
+[1] CPU Sequential 32000 Elements: 4563.04 miliseconds
+[2] CPU Sequential 32000 Elements: 4400.34 miliseconds
+[3] CPU Sequential 32000 Elements: 4351.97 miliseconds
+[4] CPU Sequential 32000 Elements: 4384.12 miliseconds
+[5] CPU Sequential 32000 Elements: 4265.62 miliseconds
+[6] CPU Sequential 32000 Elements: 4326.06 miliseconds
+[7] CPU Sequential 32000 Elements: 4530.43 miliseconds
+[8] CPU Sequential 32000 Elements: 4560.63 miliseconds
+[9] CPU Sequential 32000 Elements: 4497.73 miliseconds
+[10] CPU Sequential 32000 Elements: 4333.62 miliseconds
+
+ Average: 4421.36 miliseconds
+----------------------
+
+---------- 64000 ----------
+[1] CPU Sequential 64000 Elements: 18416.44 miliseconds
+[2] CPU Sequential 64000 Elements: 17936.93 miliseconds
+[3] CPU Sequential 64000 Elements: 18283.51 miliseconds
+[4] CPU Sequential 64000 Elements: 17923.94 miliseconds
+[5] CPU Sequential 64000 Elements: 17706.98 miliseconds
+[6] CPU Sequential 64000 Elements: 17329.45 miliseconds
+[7] CPU Sequential 64000 Elements: 17290.03 miliseconds
+[8] CPU Sequential 64000 Elements: 18140.49 miliseconds
+[9] CPU Sequential 64000 Elements: 18120.75 miliseconds
+[10] CPU Sequential 64000 Elements: 17475.97 miliseconds
+
+ Average: 17862.45 miliseconds
+----------------------
+
+---------- 128000 ----------
+[1] CPU Sequential 128000 Elements: 68663.12 miliseconds
+[2] CPU Sequential 128000 Elements: 68594.34 miliseconds
+[3] CPU Sequential 128000 Elements: 68663.60 miliseconds
+[4] CPU Sequential 128000 Elements: 68638.11 miliseconds
+[5] CPU Sequential 128000 Elements: 68991.71 miliseconds
+[6] CPU Sequential 128000 Elements: 68555.88 miliseconds
+[7] CPU Sequential 128000 Elements: 70341.68 miliseconds
+[8] CPU Sequential 128000 Elements: 68597.75 miliseconds
+[9] CPU Sequential 128000 Elements: 68589.85 miliseconds
+[10] CPU Sequential 128000 Elements: 69340.81 miliseconds
+
+ Average: 68897.69 miliseconds
+----------------------

@@ -11,14 +11,20 @@ int getPivot(int n){
     return r;
 }
 
-void populateVectors(int L[], int R[],int v[],int vsize, int pivot){
-  int i, lindex,rindex = 0;
+void populateVectors(int L[], int M[],int R[],int v[],int vsize, int pivot1, int pivot2){
+  int i, lindex=0,rindex = 0,mindex=0;
   for(i=0;i<vsize;i++){
-    if(v[i] <= v[pivot] || i == pivot){
+    if((v[i] <= v[pivot1] && (v[i] <= v[pivot2])) || i == pivot1 ){
       L[lindex] = v[i];
       lindex++;
     }
-    if(v[i] > v[pivot]){
+    
+    if((v[i] <= v[pivot1]) && (v[i] >= v[pivot2]) || i == pivot2){
+        M[mindex] = v[i];
+        mindex++;
+    }
+
+    if(v[i] > v[pivot1] && (v[i] >= v[pivot2])){
       R[rindex] = v[i];
       rindex++;
     }
@@ -26,30 +32,38 @@ void populateVectors(int L[], int R[],int v[],int vsize, int pivot){
 }
 
 int parallelQuicksort(int v[], int n){
-    int pivot;
+    int pivot1, pivot2;
     int *L; //left size of the array
+    int *M; //left size of the array
     int *R; //right size of the array
-    int lsize = 0, rsize = 0;
+    int lsize = 0, rsize = 0, msize = 0;
     int i;
 
     if(n<=1)
         return v;
 
-    pivot = getPivot(n); //any value from array (random)
+    pivot1 = getPivot(n); //any value from array (random)
+    pivot2 = getPivot(n);
     //calculate de size of the L and R arrays
     for(i=0;i<n;i++){
-      if(v[i] <= v[pivot]){
+      if((v[i] <= v[pivot1]) && (v[i] <= v[pivot2])){
         lsize++;
       }
-      if(v[i] > v[pivot]){
+
+      if((v[i] <= v[pivot1]) && (v[i] >= v[pivot2])){
+        msize++;
+      }
+
+      if(v[i] > v[pivot1] && (v[i] >= v[pivot2])){
         rsize++;
       }
     }
      L = (int*)malloc(lsize * sizeof(int));//L gets the values minor than the pivot
      R = (int*)malloc(rsize * sizeof(int));//R gets the values bigger or equal to pivot of the array
-    populateVectors(L,R,v,n,pivot);
+     M = (int*)malloc(msize * sizeof(int));//R gets the values bigger or equal to pivot of the array
+    populateVectors(L,M,R,v,n,pivot1, pivot2);
 
-    omp_set_num_threads(2);
+    omp_set_num_threads(3);
     #pragma omp parallel
     {
         int id = omp_get_thread_num();
@@ -58,11 +72,15 @@ int parallelQuicksort(int v[], int n){
             quickSort(L,0,lsize-1);
         }
         if(id == 1){
+            quickSort(M,0,rsize-1);
+        }
+        if(id == 2){
             quickSort(R,0,rsize-1);
         }
     }
     if(prints != 0){
       printArray(L,lsize);
+      printArray(M,lsize);
       printArray(R,rsize);
     }
 }
@@ -91,7 +109,7 @@ int main(int argc, char **argv){
     }
     fclose(fp);
 
-  fp = fopen("parallel-quicksort-report.txt", "a");
+  fp = fopen("parallel-quicksort-2pivot-report.txt", "a");
   fprintf(fp,"\n\n---------- %d ----------",size);
   //time count starts
   for(i=0;i<executions;i++){
